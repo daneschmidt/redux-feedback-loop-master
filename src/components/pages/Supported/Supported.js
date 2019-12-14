@@ -3,7 +3,14 @@ import React, { Component } from 'react';
 class Supported extends Component {
     render() {
         return(
-            <div>This will be the Supported Page</div>
+            <div>
+                <h2>How well are you being supported?</h2>
+                <input
+                    type="text"
+                    placeholder="Support?"
+                />
+                <button>NEXT</button>
+            </div>
         );
     }
 }
