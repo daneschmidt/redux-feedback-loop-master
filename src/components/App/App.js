@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Route} from 'react-router-dom';
+
+//PAGES
 import Comments from '../pages/Comments/Comments';
 import Feeling from '../pages/Feeling/Feeling';
 import Understanding from '../pages/Understanding/Understanding';
@@ -10,7 +13,7 @@ import Submit from '../pages/Submit/Submit';
 class App extends Component {
 
   state = {
-    feedBack: [],
+    feedBack: [], 
     enteredFeedBack: {
       feeling: '',
       understanding: '',
@@ -44,18 +47,22 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
-        <Comments />
-        <Feeling />
-        <Understanding />
-        <Supported />
-        <Submit />
+
+        <Route path="/" component={Comments} />
+        <Route path="/" component={Feeling} />
+        <Route path="/" component={Understanding} />
+        <Route path="/" component={Supported} />
+        <Route path="/" component={Submit} />
+       
       </div>
+      </Router>
     );
   }
 }
