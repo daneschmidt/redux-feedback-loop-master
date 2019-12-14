@@ -55,11 +55,11 @@ class App extends Component {
         </header>
         <br/>
 
-        <Route path="/" component={Comments} />
-        <Route path="/" component={Feeling} />
-        <Route path="/" component={Understanding} />
-        <Route path="/" component={Supported} />
-        <Route path="/" component={Submit} />
+        <Route path="/" exact component={Feeling} />
+        <Route path="/understanding" component={Understanding} />
+        <Route path="/supported" component={Supported} />
+        <Route path="/comments" component={Comments} />
+        <Route path="/submit" component={Submit} />
        
       </div>
       </Router>
