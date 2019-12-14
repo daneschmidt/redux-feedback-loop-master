@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Feeling extends Component {
     render() {
         return(
-            <div></div>
+            <div>This will be the Feeling page</div>
         );
     }
 }

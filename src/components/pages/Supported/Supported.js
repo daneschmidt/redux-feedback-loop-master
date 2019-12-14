@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Supported extends Component {
     render() {
         return(
-            <div></div>
+            <div>This will be the Supported Page</div>
         );
     }
 }

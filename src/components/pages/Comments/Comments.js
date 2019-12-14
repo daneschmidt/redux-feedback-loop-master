@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Comments extends Component {
     render() {
         return(
-            <div></div>
+            <div>This will be the Comments Page</div>
         );
     }
 }
