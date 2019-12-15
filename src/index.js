@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 const stockFeedback = {
     feeling: 0,
     understanding: 0,
-    support: 0,
+    supported: 0,
     comments: '',
 };
 

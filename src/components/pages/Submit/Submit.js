@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import mapStoreToProps from '../../redux/mapStoreToProps';
+
 class Submit extends Component {
     render() {
+        console.log(this.props.store);
         return (
             <div>
                 <h2>REVIEW YOUR FEEDBACK</h2>
@@ -15,6 +17,10 @@ class Submit extends Component {
                 <button>SUBMIT</button>
             </div>
         );
+        
     }
+    
 }
+
+
 export default connect(mapStoreToProps)(Submit);
