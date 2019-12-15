@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Supported extends Component {
 
@@ -11,10 +12,14 @@ class Supported extends Component {
         this.setState({
             [infoKey]: event.target.value
         });
-        console.log(this.state);
     }
 
     goNext = (event) => {
+        this.props.dispatch({
+            type: 'ENTER_SUPPORTED',
+            payload: this.state,
+        });
+        console.log(this.state);
         this.props.history.push('/comments')
         };
     
@@ -32,6 +37,7 @@ class Supported extends Component {
                 <input
                     type="number"
                     placeholder="Support?"
+                    onChange={(event) => this.inputField(event, 'supported')}
                 />
                 <button onClick={this.goNext}>NEXT</button>
                 <button onClick={this.goBack}>BACK</button>
@@ -39,4 +45,4 @@ class Supported extends Component {
         );
     }
 }
-export default Supported;
+export default connect()(Supported);

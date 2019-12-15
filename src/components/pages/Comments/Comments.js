@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Comments extends Component {
 
@@ -11,10 +12,14 @@ class Comments extends Component {
         this.setState({
             [infoKey]: event.target.value
         });
-        console.log(this.state);
     }
 
     goNext = (event) => {
+        this.props.dispatch({
+            type: 'ENTER_COMMENTS',
+            payload: this.state,
+        });
+        console.log(this.state);
         this.props.history.push('/submit')
     };
 
@@ -30,6 +35,7 @@ class Comments extends Component {
                 <input
                     type="text"
                     placeholder="Comments?"
+                    onChange={(event) => this.inputField(event, 'comments')}
                 />
                 <button onClick={this.goNext}>NEXT</button>
                 <button onClick={this.goBack}>BACK</button>
@@ -37,4 +43,4 @@ class Comments extends Component {
         );
     }
 }
-export default Comments;
+export default connect()(Comments);

@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 // NEW StuFF DANE MADE
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 const stockFeedback = {
     feeling: 0,
@@ -24,10 +24,10 @@ const inputReducer = (state = stockFeedback, action) => {
         }
     } else if (action.type === 'ENTER_UNDERSTANDING') {
         return {
-            ...state,
+            ...state.understanding,
             ...action.payload,
         }
-    } else if (action.type === 'ENTER_SUPPORT') {
+    } else if (action.type === 'ENTER_SUPPORTED') {
         return {
             ...state,
             ...action.payload,
@@ -40,6 +40,7 @@ const inputReducer = (state = stockFeedback, action) => {
     }
     return state;
 }
+
 const feedbackReducer = (state = { stockFeedback }, action) => {
     // console.log('What up im the feedback reducer!', state);
     return state;
