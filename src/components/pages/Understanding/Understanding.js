@@ -16,13 +16,11 @@ class Understanding extends Component {
 
     goNext = (event) => {
         this.props.history.push('/Supported')
-        };
+    };
 
-    goBack = (event) => {     
+    goBack = (event) => {
         this.props.history.push('/');
-        }
-
-
+    }
 
 
 
@@ -36,8 +34,8 @@ class Understanding extends Component {
                 />
                 <button onClick={this.goNext}>NEXT</button>
                 <button onClick={this.goBack}>BACK</button>
-                
-                
+
+
             </div>
         );
     }

@@ -16,25 +16,23 @@ class Comments extends Component {
 
     goNext = (event) => {
         this.props.history.push('/submit')
-        };
-    
-    goBack = (event) => {     
+    };
+
+    goBack = (event) => {
         this.props.history.push('/supported');
-        }
-
-
+    }
 
 
     render() {
-        return(
+        return (
             <div>
-                   <h2>Any comments you want to leave?</h2>
+                <h2>Any comments you want to leave?</h2>
                 <input
                     type="text"
                     placeholder="Comments?"
                 />
                 <button onClick={this.goNext}>NEXT</button>
-                <button onClick={this.goBack}>BACK</button>s
+                <button onClick={this.goBack}>BACK</button>
             </div>
         );
     }

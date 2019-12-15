@@ -17,11 +17,10 @@ class Feeling extends Component {
 
     goNext = (event) => {
         this.props.history.push('/Understanding')
-        };
-       
-    
-    
-    
+    };
+
+
+
 
     render() {
         return (
@@ -33,7 +32,7 @@ class Feeling extends Component {
                     onChange={(event) => this.inputField(event, 'feeling')}
                 />
                 <button onClick={this.goNext}>NEXT</button>
-                
+
             </div>
         );
     }
