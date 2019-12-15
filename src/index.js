@@ -5,9 +5,9 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 // NEW StuFF DANE MADE
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-// import logger from 'redux-logger';
+import logger from 'redux-logger';
 
 const stockFeedback = {
     feeling: 0,
@@ -48,7 +48,11 @@ const feedbackReducer = (state = { stockFeedback }, action) => {
 
 
 const storeInstance = createStore(
-    combineReducers({ feedbackReducer, inputReducer }));
+    combineReducers({ feedbackReducer, inputReducer }),
+    
+    applyMiddleware(logger)
+    
+    );
 
 
 
