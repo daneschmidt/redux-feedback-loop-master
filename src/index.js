@@ -16,14 +16,14 @@ const stockFeedback = {
     comments: '',
 };
 
+const feedbackReducer = (state={ stockFeedback }, action) => {
+    console.log('What up im the feedback reducer!', state);
+    return state;
+};
 
 const storeInstance = createStore(
-    () => {
-        console.log('Hey im a reducer in the store');
-    }
+   combineReducers({feedbackReducer})
 );
-
-
 
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
