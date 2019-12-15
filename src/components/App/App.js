@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 //PAGES
 import Comments from '../pages/Comments/Comments';
@@ -67,4 +68,5 @@ class App extends Component {
   }
 }
 
-export default App;
+
+export default connect()(App);

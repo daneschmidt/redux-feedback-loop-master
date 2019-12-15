@@ -6,7 +6,7 @@ class Understanding extends Component {
             <div>
                 <h2>How well are you understanding the content??</h2>
                 <input
-                    type="text"
+                    type="number"
                     placeholder="Understanding?"
                 />
                 <button>NEXT</button></div>

@@ -6,7 +6,7 @@ class Supported extends Component {
             <div>
                 <h2>How well are you being supported?</h2>
                 <input
-                    type="text"
+                    type="number"
                     placeholder="Support?"
                 />
                 <button>NEXT</button>
