@@ -1,6 +1,30 @@
 import React, { Component } from 'react';
 
 class Supported extends Component {
+
+
+    state = {
+        supported: '',
+    }
+
+    inputField = (event, infoKey) => {
+        this.setState({
+            [infoKey]: event.target.value
+        });
+        console.log(this.state);
+    }
+
+    goNext = (event) => {
+        this.props.history.push('/comments')
+        };
+    
+    goBack = (event) => {     
+        this.props.history.push('/Understanding');
+        }
+
+
+
+
     render() {
         return(
             <div>
@@ -9,7 +33,8 @@ class Supported extends Component {
                     type="number"
                     placeholder="Support?"
                 />
-                <button>NEXT</button>
+                <button onClick={this.goNext}>NEXT</button>
+                <button onClick={this.goBack}>BACK</button>
             </div>
         );
     }

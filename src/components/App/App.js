@@ -13,39 +13,6 @@ import Submit from '../pages/Submit/Submit';
 
 class App extends Component {
 
-  state = {
-    feedBack: [],
-    enteredFeedBack: {
-      feeling: '',
-      understanding: '',
-      support: '',
-      comments: '',
-      flagged: '',
-      date: '',
-    }
-  }
-
-  componentDidMount() {
-    this.getFeedBack();
-  }
-
-  getFeedBack = () => {
-    axios({
-      method: 'GET',
-      url: '/get_feedback',
-    })
-      .then((response) => {
-        this.setState({
-          feedBack: response.data
-        }, () => {
-          console.log(this.state);
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
   render() {
     return (
       <Router>
@@ -67,6 +34,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default connect()(App);
