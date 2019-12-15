@@ -24,7 +24,7 @@ const inputReducer = (state = stockFeedback, action) => {
         }
     } else if (action.type === 'ENTER_UNDERSTANDING') {
         return {
-            ...state.understanding,
+            ...state,
             ...action.payload,
         }
     } else if (action.type === 'ENTER_SUPPORTED') {
@@ -49,6 +49,7 @@ const feedbackReducer = (state = { stockFeedback }, action) => {
 
 const storeInstance = createStore(
     combineReducers({ feedbackReducer, inputReducer }));
+
 
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
