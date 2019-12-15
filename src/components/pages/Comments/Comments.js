@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import mapStoreToProps from '../../redux/mapStoreToProps';
+
 class Comments extends Component {
 
 
@@ -43,4 +45,4 @@ class Comments extends Component {
         );
     }
 }
-export default connect()(Comments);
+export default connect(mapStoreToProps)(Comments);
