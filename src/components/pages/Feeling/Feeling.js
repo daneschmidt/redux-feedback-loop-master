@@ -12,15 +12,16 @@ class Feeling extends Component {
         this.setState({
             [infoKey]: event.target.value
         });
-        console.log(this.state);
     }
 
     goNext = (event) => {
+        this.props.dispatch({
+            type: 'ENTER_FEELING',
+            payload: this.state,
+        });
+        console.log(this.state);
         this.props.history.push('/Understanding')
     };
-
-
-
 
     render() {
         return (
@@ -37,4 +38,4 @@ class Feeling extends Component {
         );
     }
 }
-export default Feeling;
+export default connect()(Feeling);
