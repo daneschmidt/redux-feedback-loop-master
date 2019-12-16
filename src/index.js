@@ -42,7 +42,7 @@ const inputReducer = (state = stockFeedback, action) => {
 }
 
 
-//WILL USE THIS LATER I HOPE
+//WILL USE THIS LATER I HOPE FOR THE ADMIN PAGE TO GET ALL THE DATA
 const feedbackReducer = (state = { stockFeedback }, action) => {
     // console.log('What up im the feedback reducer!', state);
     return state;
