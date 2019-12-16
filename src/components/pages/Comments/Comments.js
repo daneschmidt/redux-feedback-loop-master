@@ -31,7 +31,7 @@ class Comments extends Component {
     //SEND USER BACK TO PREVIOUS PAGE ON BUTTON CLICK
 
     goBack = (event) => {
-        this.props.history.push('/support');
+        this.props.history.push('/supported');
     }
 
 

@@ -14,6 +14,10 @@ class Submit extends Component {
         this.props.history.push('/Thanks')
     }
 
+    goBack = (event) => {
+        this.props.history.push('/comments');
+    }
+
     // AXIOS POST CALL TO THE DB WITH THE NEW FEEDBACK INFO
 
     enterFeedback(feedback) {
@@ -44,6 +48,7 @@ class Submit extends Component {
                 <p>Comments: {this.props.store.inputReducer.comments}</p>
 
                 <button onClick={this.submitHandler}>SUBMIT</button>
+                <button onClick={this.goBack}>BACK</button>
             </div>
         );
 
