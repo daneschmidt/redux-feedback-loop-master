@@ -20,7 +20,6 @@ class Understanding extends Component {
             type: 'ENTER_UNDERSTANDING',
             payload: this.state,
         });
-        console.log(this.state);
         this.props.history.push('/Supported')
     };
 

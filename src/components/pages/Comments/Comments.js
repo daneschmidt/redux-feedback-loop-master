@@ -21,12 +21,11 @@ class Comments extends Component {
             type: 'ENTER_COMMENTS',
             payload: this.state,
         });
-        console.log(this.state);
         this.props.history.push('/submit')
     };
 
     goBack = (event) => {
-        this.props.history.push('/supported');
+        this.props.history.push('/support');
     }
 
 

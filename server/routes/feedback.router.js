@@ -8,9 +8,31 @@ router.get('/', (req, res) => {
     res.send(result.rows);
   })
     .catch(error => {
-      console.log('error getting feedback', error);
       res.sendStatus(500);
     });
 });
+
+///POST SETUP
+
+router.post('/', (req, res) => {
+  let newFeedback = req.body;
+
+
+  let queryString = `INSERT INTO "feedback" (feeling, understanding, support, comments) VALUES
+  ('${newFeedback.feeling}', '${newFeedback.understanding}', '${newFeedback.support}', '${newFeedback.comments}');`;
+
+
+
+  pool.query(queryString)
+    .then((response) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+/// END POST SETUP
 
 module.exports = router;

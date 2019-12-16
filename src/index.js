@@ -12,7 +12,7 @@ import logger from 'redux-logger';
 const stockFeedback = {
     feeling: 0,
     understanding: 0,
-    supported: 0,
+    support: 0,
     comments: '',
 };
 
@@ -27,7 +27,7 @@ const inputReducer = (state = stockFeedback, action) => {
             ...state,
             ...action.payload,
         }
-    } else if (action.type === 'ENTER_SUPPORTED') {
+    } else if (action.type === 'ENTER_SUPPORT') {
         return {
             ...state,
             ...action.payload,
@@ -41,6 +41,9 @@ const inputReducer = (state = stockFeedback, action) => {
     return state;
 }
 
+
+
+//WILL USE THIS LATER I HOPE
 const feedbackReducer = (state = { stockFeedback }, action) => {
     // console.log('What up im the feedback reducer!', state);
     return state;
@@ -49,11 +52,9 @@ const feedbackReducer = (state = { stockFeedback }, action) => {
 
 const storeInstance = createStore(
     combineReducers({ feedbackReducer, inputReducer }),
-    
     applyMiddleware(logger)
-    
-    );
 
+);
 
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));

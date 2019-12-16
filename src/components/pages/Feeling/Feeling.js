@@ -20,7 +20,6 @@ class Feeling extends Component {
             type: 'ENTER_FEELING',
             payload: this.state,
         });
-        console.log(this.state);
         this.props.history.push('/Understanding')
     };
 

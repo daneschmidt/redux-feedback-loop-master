@@ -6,7 +6,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 class Supported extends Component {
 
     state = {
-        supported: '',
+        support: '',
     }
 
     inputField = (event, infoKey) => {
@@ -17,10 +17,9 @@ class Supported extends Component {
 
     goNext = (event) => {
         this.props.dispatch({
-            type: 'ENTER_SUPPORTED',
+            type: 'ENTER_SUPPORT',
             payload: this.state,
         });
-        console.log(this.state);
         this.props.history.push('/comments')
         };
     
@@ -38,7 +37,7 @@ class Supported extends Component {
                 <input
                     type="number"
                     placeholder="Support?"
-                    onChange={(event) => this.inputField(event, 'supported')}
+                    onChange={(event) => this.inputField(event, 'support')}
                 />
                 <button onClick={this.goNext}>NEXT</button>
                 <button onClick={this.goBack}>BACK</button>
