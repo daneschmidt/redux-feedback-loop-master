@@ -9,11 +9,15 @@ class Feeling extends Component {
         feeling: '',
     }
 
+    //GET INFO FROM INPUT FIELD
+
     inputField = (event, infoKey) => {
         this.setState({
             [infoKey]: event.target.value
         });
     }
+
+    //SEND INFO OFF TO REDUX AND SEND USER TO NEXT PAGE ON BUTTON CLICK
 
     goNext = (event) => {
         this.props.dispatch({
@@ -27,6 +31,7 @@ class Feeling extends Component {
         return (
             <div>
                 <h2>How are you feeling today?</h2>
+                <h4>Enter a number between 1-5</h4>
                 <input
                     type="number"
                     placeholder="Feeling?"

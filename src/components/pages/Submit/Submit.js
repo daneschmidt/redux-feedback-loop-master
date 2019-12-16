@@ -1,9 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class Submit extends Component {
+
+
+    ///BUTTON CLICK HANDLER
+
+    submitHandler = (event) => {
+        this.enterFeedback(this.props.store.inputReducer);
+    }
+
+    // AXIOS POST CALL TO THE DB WITH THE NEW FEEDBACK INFO
+
+    enterFeedback(feedback) {
+
+        axios({
+            method: 'POST',
+            url: '/get_feedback',
+            data: feedback
+        })
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((err) => {
+                console.warn(err);
+            })
+
+    }
+
+
     render() {
         console.log(this.props.store.inputReducer);
         return (
@@ -13,13 +41,13 @@ class Submit extends Component {
                 <p>Understanding: {this.props.store.inputReducer.understanding}</p>
                 <p>Support: {this.props.store.inputReducer.support}</p>
                 <p>Comments: {this.props.store.inputReducer.comments}</p>
-                
-                <button>SUBMIT</button>
+
+                <button onClick={this.submitHandler}>SUBMIT</button>
             </div>
         );
-        
+
     }
-    
+
 }
 
 

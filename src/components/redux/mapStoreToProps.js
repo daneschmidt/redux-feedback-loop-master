@@ -4,5 +4,4 @@ const mapStoreToProps = (store) => {
     }
 }
 
-
 export default mapStoreToProps;

@@ -10,11 +10,15 @@ class Comments extends Component {
         comments: '',
     }
 
+    //GET INFO FROM INPUT FIELD
+
     inputField = (event, infoKey) => {
         this.setState({
             [infoKey]: event.target.value
         });
     }
+
+    //SEND INFO OFF TO REDUX AND SEND USER TO NEXT PAGE ON BUTTON CLICK
 
     goNext = (event) => {
         this.props.dispatch({
@@ -23,6 +27,8 @@ class Comments extends Component {
         });
         this.props.history.push('/submit')
     };
+
+    //SEND USER BACK TO PREVIOUS PAGE ON BUTTON CLICK
 
     goBack = (event) => {
         this.props.history.push('/support');

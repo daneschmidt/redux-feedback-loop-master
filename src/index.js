@@ -42,7 +42,6 @@ const inputReducer = (state = stockFeedback, action) => {
 }
 
 
-
 //WILL USE THIS LATER I HOPE
 const feedbackReducer = (state = { stockFeedback }, action) => {
     // console.log('What up im the feedback reducer!', state);
@@ -55,7 +54,6 @@ const storeInstance = createStore(
     applyMiddleware(logger)
 
 );
-
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
