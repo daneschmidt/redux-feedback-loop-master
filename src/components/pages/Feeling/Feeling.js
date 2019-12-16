@@ -22,17 +22,21 @@ class Feeling extends Component {
     //     goNext;
 
     // }else if (console.warn('oh shit you need to enter some data'));
-  
+
 
 
     //SEND INFO OFF TO REDUX AND SEND USER TO NEXT PAGE ON BUTTON CLICK
 
     goNext = (event) => {
-        this.props.dispatch({
-            type: 'ENTER_FEELING',
-            payload: this.state,
-        });
-        this.props.history.push('/Understanding')
+        if (!this.state.feeling) {
+            alert('Please enter a number between 1-5')
+        } else {
+            this.props.dispatch({
+                type: 'ENTER_FEELING',
+                payload: this.state,
+            });
+            this.props.history.push('/Understanding')
+        }
     };
 
     render() {

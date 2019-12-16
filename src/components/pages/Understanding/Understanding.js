@@ -20,12 +20,16 @@ class Understanding extends Component {
     //SEND INFO OFF TO REDUX AND SEND USER TO NEXT PAGE ON BUTTON CLICK
 
     goNext = (event) => {
-        this.props.dispatch({
-            type: 'ENTER_UNDERSTANDING',
-            payload: this.state,
-        });
-        this.props.history.push('/Supported')
-    };
+        if (!this.state.understanding) {
+            alert('Please enter a number between 1-5')
+        } else {
+            this.props.dispatch({
+                type: 'ENTER_UNDERSTANDING',
+                payload: this.state,
+            });
+            this.props.history.push('/Supported')
+        };
+    }
 
     //SEND USER BACK TO PREVIOUS PAGE ON BUTTON CLICK
 

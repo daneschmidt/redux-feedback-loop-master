@@ -20,12 +20,16 @@ class Supported extends Component {
     //SEND INFO OFF TO REDUX AND SEND USER TO NEXT PAGE ON BUTTON CLICK
 
     goNext = (event) => {
+        if (!this.state.support) {
+            alert('Please enter a number between 1-5')
+        } else {
         this.props.dispatch({
             type: 'ENTER_SUPPORT',
             payload: this.state,
         });
         this.props.history.push('/comments')
     };
+}
 
     //SEND USER BACK TO PREVIOUS PAGE ON BUTTON CLICK
 
