@@ -10,6 +10,7 @@ import Feeling from '../pages/Feeling/Feeling';
 import Understanding from '../pages/Understanding/Understanding';
 import Supported from '../pages/Supported/Supported';
 import Submit from '../pages/Submit/Submit';
+import Thanks from '../pages/Thanks/Thanks';
 
 class App extends Component {
 
@@ -28,6 +29,8 @@ class App extends Component {
           <Route path="/supported" component={Supported} />
           <Route path="/comments" component={Comments} />
           <Route path="/submit" component={Submit} />
+          <Route path="/thanks" component={Thanks} />
+
 
         </div>
       </Router>

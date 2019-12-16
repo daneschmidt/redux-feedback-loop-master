@@ -11,6 +11,7 @@ class Submit extends Component {
 
     submitHandler = (event) => {
         this.enterFeedback(this.props.store.inputReducer);
+        this.props.history.push('/Thanks')
     }
 
     // AXIOS POST CALL TO THE DB WITH THE NEW FEEDBACK INFO
