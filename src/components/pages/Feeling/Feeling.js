@@ -17,6 +17,14 @@ class Feeling extends Component {
         });
     }
 
+
+    // if ({this.state.feeling} > 1 || < 6 ) {
+    //     goNext;
+
+    // }else if (console.warn('oh shit you need to enter some data'));
+  
+
+
     //SEND INFO OFF TO REDUX AND SEND USER TO NEXT PAGE ON BUTTON CLICK
 
     goNext = (event) => {

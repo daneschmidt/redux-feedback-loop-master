@@ -43,6 +43,7 @@ class Supported extends Component {
                     type="number"
                     placeholder="Support?"
                     onChange={(event) => this.inputField(event, 'support')}
+                    required
                 />
                 <button onClick={this.goNext}>NEXT</button>
                 <button onClick={this.goBack}>BACK</button>

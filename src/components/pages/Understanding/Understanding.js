@@ -43,6 +43,7 @@ class Understanding extends Component {
                     type="number"
                     placeholder="Understanding?"
                     onChange={(event) => this.inputField(event, 'understanding')}
+                    required
                 />
                 <button onClick={this.goNext}>NEXT</button>
                 <button onClick={this.goBack}>BACK</button>
